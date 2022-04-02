@@ -6,3 +6,35 @@
     
     color: rgb(80, 73, 85);
 }
+
+.color-background-primary{
+    background-color: rgb(152, 5, 152) !important;
+    color: white !important
+}
+
+.color-background-primary-light{
+    background-color: rgb(190, 59, 190) !important;
+    color: white !important;
+}
+
+.color-white{
+    color: white !important;
+}
+
+#body-container{
+    padding: 10px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.m-b-1{
+    margin-bottom: 1rem;
+}
+
+.formgroup{
+    margin-bottom: 10px;
+}

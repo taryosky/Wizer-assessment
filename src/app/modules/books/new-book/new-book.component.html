@@ -1,1 +1,30 @@
-<p>new-book works!</p>
+<form [formGroup]="newBookForm" *ngIf="categories" (ngSubmit)="addBook()">
+    <h2>New Book</h2>
+    <div class="formgroup">
+        <label class="form-label">Title</label>
+        <input type="text" formControlName="name" class="form-control">
+    </div>
+
+    <div class="formgroup">
+        <label class="form-label">Category</label>
+        <select type="text" formControlName="categoryId" class="form-control">
+            <option>-- Select Category --</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </div>
+
+    <div class="formgroup">
+        <label class="form-label">Description</label>
+        <textarea type="text" formControlName="description" class="form-control"></textarea>
+    </div>
+
+    <div class="formgroup">
+        <label class="form-label">Image Url</label>
+        <input type="file" formControlName="imageUrl" class="form-control" #coverPhoto (change)="updateFile($event)">
+    </div>
+
+    <div class="button-container">
+        <button id="submit-button" type="submit" class="btn color-background-primary-light"><span class="pi pi-check color-white"></span> Add</button>
+        <button class="btn btn-danger"><span class="pi pi-times"></span> Cancel</button>
+    </div>
+</form>

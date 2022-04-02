@@ -1,0 +1,8 @@
+<div id="book-container" *ngIf="book">
+    <div>
+        <img [src]="book.imageUrl" />
+    </div>
+    <div>Name: {{book.name}}  Category: {{book.category}}</div>
+    <p>{{book.description}}</p>
+    <div>{{book.createdAt | date}}</div>
+</div>

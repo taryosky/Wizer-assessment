@@ -1,0 +1,43 @@
+<div>
+    <button (click)="trigerNewCategory()" class="btn color-background-primary-light m-b-1">New Category</button>
+</div>
+<div *ngIf="categories">
+    <p-table [value]="categories" responsiveLayout="scroll">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>S/N</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Date Created</th>
+                <th>Actions</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-category >
+            <tr>
+                <td>{{++counter}}</td>
+                <td>{{category.name}}</td>
+                <td>{{category.description}}</td>
+                <td>{{category.createdAt | date}}</td>
+                <td>
+                    <div id="actions">
+                        <span class="pi pi-eye action" (click)="viewCategory(category.id)">
+                        </span><span class="pi pi-trash action" (click)="confirmDelete(category.id)"></span>
+                        <span class="pi pi-pencil action" (click)="trigerEdit(category.id)"></span>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+<p-dialog [(visible)]="showDialog" [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}" [modal]="true" (onHide)="resetModes()">
+    <ng-template pTemplate="header">
+        <h5 *ngIf="isViewMode">Category</h5>
+        <h5 *ngIf="isEditMode">Edit Category</h5>
+        <h5 *ngIf="isNewMode">New Category</h5>
+    </ng-template>
+    <app-update-category [category]="category" *ngIf="isEditMode" (close)="resetModes()"></app-update-category>
+    <app-new-category *ngIf="isNewMode" (close)="resetModes()"></app-new-category>
+    <app-category [category]="category" *ngIf="isViewMode" (close)="resetModes()"></app-category>
+</p-dialog>
+<p-confirmDialog [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '50vw'}">
+</p-confirmDialog>

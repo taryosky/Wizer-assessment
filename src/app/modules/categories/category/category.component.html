@@ -1,0 +1,16 @@
+<div>
+    <div >
+        <div class="formgroup">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" [value]="category.name" disabled/>
+        </div>
+        <div class="formgroup">
+            <label class="form-label">Description</label>
+            <textarea [rows]="5" [cols]="30"   class="form-control" [value]="category.description"  disabled></textarea>        
+        </div>
+
+        <div class="button-container"> 
+            <button type="submit" class="btn color-background-primary-light"><span class="pi pi-check color-white"></span> Ok</button>
+        </div>
+    </div>
+</div>

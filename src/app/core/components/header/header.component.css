@@ -1,0 +1,21 @@
+header{
+    display: flex;
+    padding: 20px;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0px 0px 9px 2px grey;
+    margin-bottom: 20px;
+    position: sticky;
+}
+#tweeter{
+    color: purple;
+    font-size: 3rem;
+    margin-left: 10px;
+}
+
+#logo-text{
+    margin-left: 15px;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}

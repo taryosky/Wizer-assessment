@@ -8,6 +8,12 @@ import { BookCardComponent } from './book-card/book-card.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
 import { BookListComponent } from './book-list/book-list.component';
 import { CoreModule } from 'src/app/core/core.module';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import {ToastModule} from 'primeng/toast';
+import { BookComponent } from './book/book.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import {CheckboxModule} from 'primeng/checkbox';
 
 
 @NgModule({
@@ -16,12 +22,18 @@ import { CoreModule } from 'src/app/core/core.module';
     NewBookComponent,
     BookCardComponent,
     UpdateBookComponent,
-    BookListComponent
+    BookListComponent,
+    BookComponent
   ],
   imports: [
     CommonModule,
     BooksRoutingModule,
     CoreModule,
-  ]
+    ConfirmDialogModule,
+    ToastModule,
+    ReactiveFormsModule,
+    CheckboxModule
+  ],
+  providers:[ConfirmationService, MessageService]
 })
 export class BooksModule { }

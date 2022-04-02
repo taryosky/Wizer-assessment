@@ -1,1 +1,24 @@
-<p>update-book works!</p>
+<form [formGroup]="updateForm" *ngIf="updateForm" (ngSubmit)="updateBook()">
+    <h2>Update Book</h2>
+    <div class="formgroup">
+        <label class="form-label">Title</label>
+        <input type="text" formControlName="title" class="form-control">
+    </div>
+
+    <div class="formgroup">
+        <label class="form-label">Image Url</label>
+        <input type="text" formControlName="imageUrl" class="form-control">
+    </div>
+
+    <div class="formgroup">
+        <label class="form-label">Description</label>
+        <textarea type="text" formControlName="description" class="form-control"></textarea>
+    </div>
+    <div class="formgroup">
+        <p-checkbox [formControl]="updateForm.controls['isFvorite']" [label]="!isFvorite ? 'Add to favourites' : 'Remove from favourites'" [(ngModel)]="isFvorite" [binary]="true"></p-checkbox>       
+    </div>
+    <div id="button-container">
+        <button id="submit-button" type="submit" class="btn color-background-primary-light"><span class="pi pi-check color-white"></span> Update Book</button>
+        <button class="btn btn-danger"><span class="pi pi-times"></span> Cancel</button>
+    </div>
+</form>

@@ -3,7 +3,8 @@ export interface Book{
     name: string;
     isFvorite: boolean;
     id: number;
-    favorite: boolean;
     imageUrl: string;
     description: string;
+    categoryId: number;
+    category: string;
 }
