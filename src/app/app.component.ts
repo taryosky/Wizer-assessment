@@ -25,8 +25,7 @@ export class AppComponent {
           expanded: true,
           items: [
               {label: 'All Books', icon: 'pi pi-fw pi-list', routerLink: ['/books']},
-              {label: 'New Book', icon: 'pi pi-fw pi-plus', routerLink: ['/books', 'new']},
-              {label: 'Favourites', icon: 'pi pi-fw pi-bookmark'}
+              {label: 'New Book', icon: 'pi pi-fw pi-plus', routerLink: ['/books', 'new']}
           ]
       },
       {
@@ -34,9 +33,7 @@ export class AppComponent {
           icon: 'pi pi-fw pi-list',
           expanded: true,
           items: [
-              {label: 'All Categories', icon: 'pi pi-fw pi-list', routerLink: ['/categories']},
-              {label: 'New Category', icon: 'pi pi-fw pi-plus'},
-              {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+              {label: 'All Categories', icon: 'pi pi-fw pi-list', routerLink: ['/categories']}
           ]
       }
   ];
